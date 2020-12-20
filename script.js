@@ -7,6 +7,7 @@ const title = document.getElementById('title');
 const wrapper = document.querySelector('.wrapper');
 const questionCounter = document.getElementById('questionCounter');
 const score = document.getElementById('score');
+const domScore = document.getElementById('dom-score')
 
 //CONSTANTS
 let scoretext = 0;
@@ -77,7 +78,10 @@ function selectAnswer(e){
     }else{  
             startButton.innerText = 'Finish';
             startButton.classList.remove('hide')
-            score.innerText = 0;
+            domScore.innerText =  ` Score : ${scoretext}`
+            setTimeout(() => {
+                window.location.reload();
+            }, 1500);
     }
 
 }
